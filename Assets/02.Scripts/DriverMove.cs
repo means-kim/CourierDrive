@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class DriverMove : MonoBehaviour
@@ -17,5 +18,15 @@ public class DriverMove : MonoBehaviour
         
         transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, moveAmount, 0);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log($"으악!!");
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log($"거제 야호~!");
     }
 }
